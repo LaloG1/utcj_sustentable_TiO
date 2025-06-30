@@ -91,23 +91,23 @@
                                 <input
                                     type="text"
                                     class="form-control"
-                                    id="name"
-                                    name="name"
-                                    placeholder="Ingresa tu nombre"
+                                    id="matricula"
+                                    name="matricula"
+                                    placeholder="Ingresa tu correo"
+                                    
+                                    title="El correo debe tener el formato: @utcj.edu.mx"
                                     autofocus />
-                                <label for="name">Nombre</label>
+                                <label for="matricula">Correo</label>
                             </div>
                             <div class="form-floating form-floating-outline mb-5">
                                 <input
                                     type="text"
                                     class="form-control"
-                                    id="email"
-                                    name="email"
-                                    placeholder="Ingresa tu correo"
-                                    pattern="al[0-9]{8}@utcj\.edu\.mx"
-                                    title="El correo debe tener el formato: al########@utcj.edu.mx"
+                                    id="name"
+                                    name="name"
+                                    placeholder="Ingresa tu nombre"
                                     autofocus />
-                                <label for="email">Correo</label>
+                                <label for="name">Nombre</label>
                             </div>
                             <div class="mb-5">
                                 <div class="form-password-toggle">
