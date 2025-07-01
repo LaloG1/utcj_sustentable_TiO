@@ -28,6 +28,25 @@ Route::post('/tareas', [TareaController::class, 'store'])->name('tareas.store');
 Route::put('/tareas/{id}', [TareaController::class, 'update'])->name('tareas.update');
 Route::delete('/tareas/{id}', [TareaController::class, 'destroy'])->name('tareas.destroy');
 
+///Rutas Rol
+Route::get('/home', function () {
+    return view('home');
+})->middleware(['auth'])->name('home');
+
+Route::get('/home-alumno', function () {
+    return view('home-alumno');
+})->middleware(['auth'])->name('home-alumno');
+
+///Rutas middleware rol
+Route::get('/home', function () {
+    return view('home');
+})->middleware(['auth', 'rol:profesor']);
+
+Route::get('/home-alumno', function () {
+    return view('home-alumno');
+})->middleware(['auth', 'rol:estudiante']);
+
+
 /// Lista de tareas
 Route::get('/crear-actividad', [TareaController::class, 'show']);
 
@@ -43,7 +62,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
 
 /// Rutas views
 
